@@ -1,6 +1,6 @@
 # Script to create an Organization DID
 # First step in workflow
-# Used when creating class for example
+# Used when creating class
 
 import SecretService as sc
 import requests
