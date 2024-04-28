@@ -19,7 +19,7 @@ def create_proof_request_template(proof_request_data):
 # Example data for creating a proof request template
 proof_request_data = {
     "name": "b",
-    "issuer": "did:dock:5FDnJYH8c6adynWjhZE4N4kRjcqRVZCWfYHz22WAbuKsYNPY",
+    "issuer": "did:dock:5FDnJYH8c6adynWjhZE4N4kRjcqRVZCWfYHz22WAbuKsYNPY", # TODO: Change this to the DID of the organization issuing the credential (from the DIDService.py script)
 }
 
 # Create the proof request template

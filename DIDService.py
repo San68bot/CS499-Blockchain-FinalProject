@@ -2,6 +2,14 @@
 # First step in workflow
 # Used when creating class
 
+
+'''
+
+To create this class run this file, the output did number will be the class did number to use for issuing credientials
+and verifying users
+
+'''
+
 import SecretService as sc
 import requests
 import time

@@ -9,14 +9,15 @@ import json
 
 def create_credential(issuer_did):
     credential = {
-        "persist": True,
-        "password": "q123",
+        "anchor": True,
+        "distribute": True,
+        "recipientEmail": "jiloy57546@togito.com",
         "credential": {
             "type": ["BasicCredential"],
             "name": "testing",
             "subject": {
-                "id": "G1234567890",
-                "name": "John Doe"
+                "id": "ABCD",
+                "name": "Testing123"
             },
             "issuer": issuer_did
         }
@@ -32,15 +33,16 @@ def verify_credential(credential):
     return response.json()
 
 if __name__ == "__main__":
-    issuer_did = "did:dock:5FDnJYH8c6adynWjhZE4N4kRjcqRVZCWfYHz22WAbuKsYNPY"
+    # TODO: Change this to the DID of the organization issuing the credential (from the DIDService.py script)
+    issuer_did = "did:dock:5CzTSMVgdwCfWepn2FN321vxBaqrwjnyy9C3TtLhqT1FVgNM"
 
     # Create the credential
     created_credential = create_credential(issuer_did)
     print("Created Credential:", json.dumps(created_credential, indent=2))
 
-    time.sleep(5)
+    #time.sleep(5)
 
-    verification_result = verify_credential(created_credential)
-    print("Verification Result:", json.dumps(verification_result, indent=2))
+    #verification_result = verify_credential(created_credential)
+    #print("Verification Result:", json.dumps(verification_result, indent=2))
 
 
