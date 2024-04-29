@@ -18,7 +18,7 @@ def create_did():
     """Create a new DID."""
     json_data = {
         'type': 'dock',
-        'keyType': 'sr25519',
+        'keyType': 'ed25519',
     }
 
     response = requests.post(
@@ -53,16 +53,10 @@ if __name__ == "__main__":
     did_creation_response = create_did()
     print("Create DID:", did_creation_response)
 
+    time.sleep(5)
+
     if 'id' in did_creation_response:
-        time.sleep(5)
         did_info = get_did(did_creation_response['did'])
         print("Retrieved DID:", did_info)
-
-        # Save the DID creation response to a text file
-        with open('generated_did.txt', 'w') as file:
-            file.write(str(did_creation_response))
-            file.write('\n')
-            file.write(str(did_info))
     else:
         print("Failed to retrieve the DID ID from the creation response.")
-

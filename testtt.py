@@ -48,7 +48,7 @@ proof_request_id = 'd191f12b-c874-4f59-856d-41f5167ba9c5'
 
 # Create the proof request from the template
 try:
-    result = get_proof_template_history(template_id)
+    result = create_proof_request_from_template(template_id)
     print("Proof Request Created:", json.dumps(result, indent=2))
     print("Proof Request Created:", result[0]['verified'])
 except Exception as e:

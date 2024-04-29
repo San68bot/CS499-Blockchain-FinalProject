@@ -19,7 +19,7 @@ def create_credential(issuer_did):
                 "id": "ABCD",
                 "name": "Testing123"
             },
-            "issuer": issuer_did
+            "issuer": "did:dock:5E1mQz3jHjq5ZKDhsHF9r7J2L4MHUM9nkBoLAZiv5Tf6S875"
         }
     }
 
@@ -44,5 +44,4 @@ if __name__ == "__main__":
 
     #verification_result = verify_credential(created_credential)
     #print("Verification Result:", json.dumps(verification_result, indent=2))
-
 
