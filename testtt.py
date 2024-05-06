@@ -44,12 +44,19 @@ def get_proof_template_history(id):
 
 
 template_id = 'd8980f04-8779-4b24-a75f-fb1b6903888e'
-proof_request_id = 'd191f12b-c874-4f59-856d-41f5167ba9c5'
-
+    
 # Create the proof request from the template
 try:
-    result = create_proof_request_from_template(template_id)
+    result = create_proof_request_from_template("d0155104-c2d0-4fe2-b5e8-f79ddb570047")
     print("Proof Request Created:", json.dumps(result, indent=2))
-    print("Proof Request Created:", result[0]['verified'])
+    import time
+
+    # Countdown for 30 seconds
+    for i in range(45, 0, -1):
+        print(f"Waiting: {i} seconds remaining", end='\r')
+        time.sleep(1)
+    print("Continuing with the process...")
+
+    print("Proof Request Created:", result['verified'])
 except Exception as e:
     print(str(e))

@@ -7,19 +7,20 @@ import requests
 import time
 import json
 
-def create_credential(issuer_did):
+def create_credential(issuer_did,gnumber,name):
     credential = {
         "anchor": True,
         "distribute": True,
-        "recipientEmail": "jiloy57546@togito.com",
+        "recipientEmail": "fadil.amiruddin@gmail.com",
         "credential": {
             "type": ["BasicCredential"],
-            "name": "testing",
+            "name": "Sunday",
             "subject": {
-                "id": "ABCD",
-                "name": "Testing123"
+                "id": gnumber,
+                "FullName": name
+                
             },
-            "issuer": "did:dock:5E1mQz3jHjq5ZKDhsHF9r7J2L4MHUM9nkBoLAZiv5Tf6S875"
+            "issuer": issuer_did
         }
     }
 
@@ -34,7 +35,7 @@ def verify_credential(credential):
 
 if __name__ == "__main__":
     # TODO: Change this to the DID of the organization issuing the credential (from the DIDService.py script)
-    issuer_did = "did:dock:5CzTSMVgdwCfWepn2FN321vxBaqrwjnyy9C3TtLhqT1FVgNM"
+    issuer_did = "did:dock:5HcJVWWMroFctbbDE7uVz9dkm1K68ykZ7RHwcmtaydJrdivx"
 
     # Create the credential
     created_credential = create_credential(issuer_did)

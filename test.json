@@ -1,0 +1,23 @@
+
+{
+  "@context": "https://www.w3.org/2018/credentials/v1",
+  "id": "https://creds-testnet.dock.io/207334ff3e4bfe3087b3b43f8bd23692a39859b8ef1674ffbcbf0eb2bdad46d7",
+  "type": [
+    "VerifiableCredential",
+    "BasicCredential"
+  ],
+  "credentialSubject": {
+    "id": "0000",
+    "FullName": "meo"
+  },
+  "issuanceDate": "2024-05-05T20:47:20.006Z",
+  "issuer": "did:dock:5Dtyw1VC9BSeDuTPZfjhBWwn1T8TZo9GoWDZ9fga4XqqDfLk",
+  "name": "Sunday",
+  "proof": {
+    "type": "Ed25519Signature2018",
+    "created": "2024-05-05T20:47:20Z",
+    "verificationMethod": "did:dock:5Dtyw1VC9BSeDuTPZfjhBWwn1T8TZo9GoWDZ9fga4XqqDfLk#keys-1",
+    "proofPurpose": "assertionMethod",
+    "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..yxAi8r39CUSihLNf9Xf7TOzlRsnB7lOlpRitHRsr6Z3a8nTDA"
+  }
+}

@@ -1,0 +1,376 @@
+<style>
+    @import url('https://rsms.me/inter/inter.css');
+     :root {
+         --color-dark: #212121;
+         --color-signal: #fab700;
+         --color-background: var(--color-light);
+         --color-text: var(--color-dark);
+         --color-accent: var(--color-signal);
+         --size-bezel: 0.5rem;
+         --size-radius: 4px;
+         line-height: 1.4;
+         font-family: 'Inter', sans-serif;
+         font-size: calc(.6rem + .4vw);
+         color: var(--color-text);
+         background: var(--color-background);
+         font-weight: 300;
+         padding: 0 calc(var(--size-bezel) * 3);
+    }
+
+   h1, h2, h3 {
+       font-weight: 900;
+  }
+   mark {
+       background: var(--color-accent);
+       color: var(--color-text);
+       font-weight: bold;
+       padding: 0 0.2em;
+  }
+.container {
+width: 100%;
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center; /* Modified: Align items to the center */
+position: absolute; /* Added: Position the container absolutely */
+top: 50%; /* Added: Move the container to the middle of the page vertically */
+left: 70%; /* Added: Move the container to the middle of the page horizontally */
+transform: translate(-50%, -50%); /* Added: Center the container */
+}
+   .card {
+       background: var(--color-background);
+       padding: calc(5 * var(--size-bezel));
+       margin-top: calc(6 * var(--size-bezel));
+       border-radius: var(--size-radius);
+       border: 2px solid var(--color-shadow, currentColor);
+       box-shadow: 0.5rem 0.5rem 0 var(--color-shadow, currentColor);
+       width: 200%;
+
+  }
+   .card--inverted {
+       --color-background: var(--color-dark);
+       color: var(--color-light);
+       --color-shadow: var(--color-accent);
+  }
+   .card--accent {
+       --color-background: var(--color-signal);
+       --color-accent: var(--color-light);
+       color: var(--color-dark);
+  }
+   .card *:first-child {
+       margin-top: 0;
+  }
+   .l-design-widht {
+       max-width: 40rem;
+       padding: 1rem;
+  }
+   .input {
+       position: relative;
+  }
+   .input__label {
+       position: absolute;
+       left: 0;
+       top: 0;
+       padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
+       margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5);
+       background: pink;
+       white-space: nowrap;
+       transform: translate(0, 0);
+       transform-origin: 0 0;
+       background: var(--color-background);
+       transition: transform 120ms ease-in;
+       font-weight: bold;
+       line-height: 1.2;
+  }
+   .input__field {
+       box-sizing: border-box;
+       display: block;
+       width: 100%;
+       border: 3px solid currentColor;
+       padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+       color: currentColor;
+       background: transparent;
+       border-radius: var(--size-radius);
+  }
+   .input__field:focus + .input__label, .input__field:not(:placeholder-shown) + .input__label {
+       transform: translate(0.25rem, -65%) scale(0.8);
+       color: var(--color-accent);
+  }
+   .button-group {
+       margin-top: calc(var(--size-bezel) * 5.5);
+  }
+   button {
+       color: currentColor;
+       padding: var(--size-bezel) calc(var(--size-bezel) * 1.5);
+       background: var(--color-accent);
+       border: none;
+       border-radius: var(--size-radius);
+       font-weight: 10;
+  }
+   button[type=reset] {
+       background: var(--color-background);
+       font-weight: 200;
+  }
+   button + button {
+       margin-left: calc(var(--size-bezel) * 3);
+  }
+   .icon {
+       display: inline-block;
+       width: 1em;
+       height: 1em;
+       margin-right: 0.5em;
+  }
+   .hidden {
+       display: none;
+  }
+
+
+      body{
+        background-color: black;
+      }
+      .container {
+
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; /* Modified: Align items to the left */
+      }
+
+      h1 {
+        white-space: nowrap;
+
+        position: absolute;
+        top: 10%;
+        left: 28%;
+        transform: translate(-50%, -50%);
+        font-size: 120px;
+        text-transform: uppercase;
+        font-family: 'Gambetta', serif;
+        letter-spacing: -3px;
+        transition: 700ms ease;
+        font-variation-settings: "wght" 311;
+        margin-bottom: 0.8rem;
+        color: PaleGoldenRod;
+        outline: none;
+      }
+
+
+        h1:hover {
+          font-variation-settings: "wght" 582;
+          letter-spacing: 1px;
+        }
+
+        p {
+          font-size: 1.2em;
+          line-height: 150%;
+          text-align: center;
+          color: MintCream;
+          letter-spacing: .5px;
+        }
+        .shadow-button-set {
+          margin: 15;
+          right: 50%;
+
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start; /* Modified: Align items to the left */
+          gap: 2.5vmin;
+
+          & > li {
+            display: inline-flex;
+            background: rgb(97, 0, 233);
+
+            &:is(:hover, :focus-within) > button:not(:active) {
+              --distance: -10px;
+            }
+          }
+          .red{
+            background-color: red;
+          }
+          .green {
+            background-color: green;
+          }
+          .black {
+            background-color: black;
+          }
+          & button {
+            appearance: none;
+            outline: none;
+            font-size: 8vmin; /* Modified: Increase font size to make boxes bigger */
+            border: 5px solid black;
+            background: white;
+            width: 10in;
+            --distance: 0;
+            transform: translateX(var(--distance)) translateY(var(--distance));
+
+            @media (prefers-reduced-motion: no-preference) {
+              will-change: transform;
+              transition: transform .2s ease ;
+            }
+          }
+        }
+
+        h1 + .shadow-button-set {
+          margin-top: 10rem;
+        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      html {
+        block-size: 100%;
+      }
+
+      body {
+        min-block-size: 100%;
+        font-family: system-ui, sans-serif;
+
+        display: grid;
+        place-content: center;
+      }
+      </style>
+ <body>
+    <div class="container">
+        <h1 id="classTitle" contenteditable>Select A Class</h1>
+        <ul class="shadow-button-set" id="buttonSet">
+            {% for class_name in classes %}
+                <li>
+                <button onclick="addClassToURL('{{class_name}}')">{{ class_name }}</button>
+                </li>
+            {% endfor %}
+        </ul>
+  <ul class="shadow-button-set" id="studentButtonSet" style="display: none;">
+        <li class = 'green'>
+          <button onclick="addStudent()">Add Student</button>
+        </li>
+        <li class="red">
+          <button onclick="removeStudent()">Remove Student</button>
+        </li>
+      </ul>
+  </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <script>
+      // Function to get URL parameter by name
+      function getUrlParameter(name) {
+        name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+      };
+
+      // Function to set text of h1 to class name from URL
+      function setClassTitleFromUrl() {
+        var className = getUrlParameter('class');
+        if (className) {
+          document.getElementById('classTitle').innerText = className;
+          // Hide the original button set
+          document.getElementById('buttonSet').style.display = 'none';
+          // Show the student button set
+          document.getElementById('studentButtonSet').style.display = 'flex';
+        }
+      }
+
+      // Function to add class parameter to URL when button is clicked
+      function addClassToURL(className) {
+        
+        // Get the current URL
+        var currentURL = window.location.href;
+
+        // Check if URL already contains a query string
+        var separator = currentURL.indexOf('?') !== -1 ? '&' : '?';
+
+        // Append the class parameter to the URL
+        var newURL = currentURL + separator + 'class=' + encodeURIComponent(className);
+
+        // Replace the current URL with the new URL
+        window.history.replaceState({}, '', newURL);
+
+        // Set the text of h1 to the selected class
+        document.getElementById('classTitle').innerText = className;
+
+        // Hide the original button set
+        document.getElementById('buttonSet').style.display = 'none';
+        // Show the student button set
+        document.getElementById('studentButtonSet').style.display = 'flex';
+      }
+
+      // Function to add a student (replace with your own logic)
+    // Function to add a student
+
+    // Replace the content of the studentButtonSet element with the new HTML element
+ // Function to add a student
+function addStudent() {
+    var studentButtonSet = document.getElementById('studentButtonSet');
+    var existingButtons = studentButtonSet.querySelectorAll('li');
+    existingButtons.forEach(function(button) {
+        button.style.display = 'none'; // Hide existing buttons
+    });
+
+    // Create the new HTML element
+    var newElement = document.createElement('li');
+    newElement.className = 'black'; // Ensure this matches your CSS expectations
+    newElement.innerHTML = `
+        <article class="l-design-widht">
+            <div class="card card--accent">
+                <h2>Press Enter to add Student</h2>
+                <form id="studentNameForm">
+                    <label class="input">
+                        <input id="studentNameInput" class="input__field" type="text" placeholder=" " />
+                        <span class="input__label">Type Student name here</span>
+                    </label>
+                </form>
+            </div>
+        </article>
+    `;
+
+    studentButtonSet.appendChild(newElement); // Append the new element
+    var studentNameInput = document.getElementById('studentNameInput');
+
+    // Add event listener to the input field for handling Enter key press
+  
+    studentNameInput.addEventListener('keydown', function(event) {
+        // Check if the Enter key was pressed
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent the default form submission
+            $.ajax({
+                url: '/AddStudent',
+                type: 'POST',
+                data: JSON.stringify({'studentName': studentNameInput.value}),
+                contentType: 'application/json',
+                success: function(response) {
+                    console.log(response);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+            // Send the POST request
+        console.log("enter is entering the enters")
+        
+        }
+    });
+}
+
+      // Function to remove a student (replace with your own logic)
+      function removeStudent() {
+        alert('Removing student...');
+      }
+
+      // Call the function to set class title from URL when the page loads
+      window.onload = setClassTitleFromUrl;
+      // Function to remove a student (replace with your own logic)
+      function removeStudent() {
+        alert('Removing student...');
+      }
+
+      // Call the function to set class title from URL when the page loads
+      window.onload = setClassTitleFromUrl;
+    </script>
+  </body>
+  </html>
+

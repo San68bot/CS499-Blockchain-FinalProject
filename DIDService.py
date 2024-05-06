@@ -51,7 +51,7 @@ def delete_did(did_id):
 if __name__ == "__main__":
     # Create a DID
     did_creation_response = create_did()
-    print("Create DID:", did_creation_response)
+    print("Create DID:", did_creation_response['did'])
 
     time.sleep(5)
 
